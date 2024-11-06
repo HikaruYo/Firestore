@@ -28,31 +28,85 @@ body {
   place-items: center;
   justify-content: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(100, 100, 200, .8);
+  margin-bottom: 2rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+h2 {
+  font-size: 2rem;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.App {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 14px;
+}
+.form {
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  gap: 10px;
+}
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.form h1 {
+  margin: 10px 0 25px 0;
+}
+input {
+  display: flex;
+  width: 80%;
+  padding: 10px 15px 10px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: medium;
+}
+button {
+  display: block;
+  width: 80%;
+  height: 40px;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border: 0px solid;
+  border-radius: 14px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgba(100, 100, 200, .8);
 }
 
 @media (prefers-color-scheme: light) {

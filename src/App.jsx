@@ -1,37 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import cong from "./configuration.jsx";
-import { getDatabase, ref, onValue } from 'firebase/database';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Login';
+import SignUp from './SignUp';
+import AddItem from './AddItem';
 
-function App() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const database = getDatabase(cong);
-        const collectionRef = ref(database, "my_location");
-
-        const fetchData = () => {
-            onValue(collectionRef, (snapshot) => {
-                const dataItem = snapshot.val();
-                if (dataItem) {
-                    const displayItem = Object.values(dataItem);
-                    setData(displayItem);
-                }
-            });
-        };
-
-        fetchData();
-    }, []);
-
+const App = () => {
     return (
-        <>
-            <h1>Data from Database</h1>
-            <ul>
-                {data.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-        </>
+        <Router>
+            <div className="App">
+                <h1>Firestore</h1>
+                <div className="form">
+                    <Routes>
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<SignUp />} />
+                        <Route path="/addItem" element={<AddItem />} />
+                    </Routes>
+                </div>
+            </div>
+        </Router>
     );
-}
+};
 
 export default App;
